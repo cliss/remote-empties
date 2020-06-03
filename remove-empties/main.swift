@@ -8,5 +8,5 @@
 
 import Foundation
 
-print("Hello, World!")
-
+let retVal = App.run(arguments: CommandLine.arguments)
+exit(retVal)
