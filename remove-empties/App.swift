@@ -44,10 +44,10 @@ class App {
         }
         
         if contents.count == 0 {
-            print("\(path.path) \(self.doDeletions ? "would be" : "was") deleted")
+            print("\(path.path) \(self.doDeletions ? "was" : "would be") deleted")
             if self.doDeletions {
                 do {
-                    //try FileManager.default.removeItem(at: path)
+                    try FileManager.default.trashItem(at: path.standardizedFileURL, resultingItemURL: nil)
                     self.deletions += 1
                 } catch {
                     print("⚠️ Could not delete \(path.path)")
